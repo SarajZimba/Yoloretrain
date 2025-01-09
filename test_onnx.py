@@ -94,8 +94,8 @@ def detect_and_save_image(input_image_path, output_image_path):
     input_tensor = input_tensor.transpose(2, 0, 1).reshape(1, 3, 640, 640).astype(np.float32)
 
     # Load ONNX model and run inference
-    model = ort.InferenceSession("yolov8n.onnx", providers=["CPUExecutionProvider"])
-    outputs = model.run(["output0"], {"images": input_tensor})
+    model = ort.InferenceSession("yolov8model.onnx", providers=["CPUExecutionProvider"])
+    outputs = model.run(["output"], {"input": input_tensor})
     detections = process_output(outputs[0], img_width, img_height)
 
     # If there are detections, draw the one with the highest probability
@@ -145,5 +145,5 @@ def process_output(output, img_width, img_height):
 
 
 # Example usage
-detect_and_save_image("Dog.jpeg", "dog_detected_2.jpg")
+detect_and_save_image("pEP.jpeg", "PEP_DETECTED.jpg")
 
