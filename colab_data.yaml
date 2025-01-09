@@ -1,0 +1,25 @@
+# Read the existing content of the data.yaml file
+with open('Face-Detection-1/data.yaml', 'r') as file:
+    data = file.read()
+    print(data)  # Print the current content of the data.yaml file
+
+# Modify the content as needed (example)
+new_data_yaml_content = """
+names:
+- dog
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: face-detection-xmnwd
+  url: https://universe.roboflow.com/silverlinetester/face-detection-xmnwd/dataset/1
+  version: 1
+  workspace: silverlinetester
+train: /content/Face-Detection-1/train/images  # Full path for training images
+val: /content/Face-Detection-1/valid/images  # Full path for validation images
+"""
+
+# Write the new content back to the file
+with open('Face-Detection-1/data.yaml', 'w') as file:
+    file.write(new_data_yaml_content)
+
+print("data.yaml has been updated.")

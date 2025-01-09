@@ -1,0 +1,16 @@
+names:
+- dog
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: face-detection-xmnwd
+  url: https://universe.roboflow.com/silverlinetester/face-detection-xmnwd/dataset/1
+  version: 1
+  workspace: silverlinetester
+# test: ../test/images
+train: C:/Users/Dell/Documents/Silverline_projects/Yoloretrain/Face-Detection-1/train/images
+val: C:/Users/Dell/Documents/Silverline_projects/Yoloretrain/Face-Detection-1/valid/images
+
+
+
+
